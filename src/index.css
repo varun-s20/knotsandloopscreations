@@ -1,0 +1,90 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 33 30% 97%;
+    --foreground: 25 15% 19%;
+
+    --card: 33 30% 97%;
+    --card-foreground: 25 15% 19%;
+
+    --popover: 33 30% 97%;
+    --popover-foreground: 25 15% 19%;
+
+    --primary: 178 12% 37%;
+    --primary-foreground: 33 30% 97%;
+
+    --secondary: 120 7% 57%;
+    --secondary-foreground: 25 15% 19%;
+
+    --muted: 34 18% 85%;
+    --muted-foreground: 34 18% 40%;
+
+    --accent: 17 32% 48%;
+    --accent-foreground: 33 30% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 34 18% 80%;
+    --input: 34 18% 80%;
+    --ring: 34 18% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-crochet-cream text-crochet-darkBrown font-light;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .product-card {
+    @apply bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md hover:-translate-y-1;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20;
+  }
+
+  .fade-in-item {
+    @apply opacity-0 animate-fade-in;
+    animation-fill-mode: forwards;
+  }
+  
+  .btn-primary {
+    @apply bg-crochet-brown text-white hover:opacity-90 px-6 py-2.5 rounded-md transition-colors duration-300 tracking-wide;
+  }
+
+  .image-overlay::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-crochet-darkBrown/40 to-transparent;
+  }
+
+  .hover-link {
+    @apply relative inline-block;
+  }
+
+  .hover-link::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-crochet-brown transition-all duration-300 ease-out;
+  }
+
+  .hover-link:hover::after {
+    @apply w-full;
+  }
+}
